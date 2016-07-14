@@ -2,9 +2,9 @@ development:
   adapter: sqlite3
   encoding: utf8
   reconnect: false
-  database: db/ps_developement.sqlite3
+  database: db/ps_development.sqlite3
 
-testing
+test:
   adapter: sqlite3
   encoding: utf8
   reconnect: false
