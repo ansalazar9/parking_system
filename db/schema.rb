@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725225501) do
+ActiveRecord::Schema.define(version: 20160726000914) do
 
   create_table "locations", force: :cascade do |t|
-    t.float    "location_latitude"
-    t.float    "location_longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "max_slots"
+    t.string   "address"
   end
 
   create_table "park_records", force: :cascade do |t|
