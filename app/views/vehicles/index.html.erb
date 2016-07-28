@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Registros</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= render partial: "layouts/user_menu" %></th>
+      </tr>
+    </thead>
+  </table>  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Vin</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vehicles.each do |vehicle| %>
+       <tr>
+         <td> <%= vehicle.model %> </td>
+         <td> <%= vehicle.vin %> </td>
+         <td> <%= vehicle.year %> </td>
+       </tr>
+      <%end %>
+    </tbody>
+  </table>
+</div>

@@ -1,5 +1,12 @@
 class VehiclesController < ApplicationController
 
+  def index
+    @user = User.find(params[:user_id])
+    @vehicles = @user.vehicles
+    flash[:error] = 'No vehiculos registrados' if @vehicles.empty?
+
+  end
+
   def new
     @user = current_user
     @vehicle = Vehicle.new
@@ -7,10 +14,10 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
-    @vehicle.user.id = current_user.id
+    @vehicle.user_id = current_user.id
     if @vehicle.save
       flash[:success] = 'Vehicle registered successfully'
-      redirect_to user_vehicle_path(current_user)
+      redirect_to user_vehicles_path(current_user)
     else
       flash[:error] = @vehicle.errors.full_messages.join(',')
       render'new'

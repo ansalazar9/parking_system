@@ -12,4 +12,13 @@
     <%= form.text_field :vin, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= form.label :year%><br />
+    <%= form.date_field :year, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= form.submit :Guardar%><br />
+  </div>
+
 <% end %>

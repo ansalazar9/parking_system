@@ -1,0 +1,28 @@
+<h2>Registro de Locacion </h2>
+
+<%= form_for @location, url: {action: 'create'} do |form| %>
+
+  <div class="field">
+    <%= form.label :name%><br />
+    <%= form.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address%><br />
+    <%= form.text_field :address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_slots%><br />
+    <%= form.number_field :max_slots, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description%><br />
+    <%= form.text_field :description, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.submit :Guardar%><br />
+  </div>
+<% end %>
